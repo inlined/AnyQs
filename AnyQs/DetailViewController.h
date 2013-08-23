@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PendingQuestionsViewController.h"
+#import "Question.h"
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) PendingQuestionsViewController *delegate;
+@property (strong, nonatomic) Question *question;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *promptLabel;
+@property (weak, nonatomic) IBOutlet UIButton *answeredButton;
+
+- (IBAction)answerQuestion:(id)sender;
 @end

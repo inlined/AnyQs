@@ -1,5 +1,5 @@
 //
-//  MasterViewController.m
+//  PendingQuestionsViewController.m
 //  AnyQs
 //
 //  Created by Thomas Bouldin on 8/23/13.
@@ -10,32 +10,58 @@
 
 #import "DetailViewController.h"
 
+@interface PendingQuestionsViewController()
+@property NSMutableArray *objects;
 
-@interface PendingQuestionsViewController () {
-    NSMutableArray *_objects;
-}
+- (Question *)objectAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation PendingQuestionsViewController
+@dynamic objects; // in super
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.parseClassName = @"Question";
+        self.textKey = @"prompt";
+    }
+    return self;
+}
 
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+        self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
     [super awakeFromNib];
+}
+
+- (void)objectsDidLoad:(NSError *)error {
+    [super objectsDidLoad:error];
+    if (!error && [self.objects count] >= 1 && !self.detailViewController.question) {
+        self.detailViewController.question = [self objectAtIndex:0];
+    }
+}
+
+- (Question *)objectAtIndex:(int) index {
+    return (Question *)[self.objects objectAtIndex:index];
+}
+
+- (Question *)objectAtIndexPath:(NSIndexPath *)indexPath {
+    return (Question *)[super objectAtIndexPath:indexPath];
+}
+
+- (PFQuery *)queryForTable {
+    PFQuery *query = [super queryForTable];
+    [query whereKey:@"status" equalTo:@"accepted"];
+    return query;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,75 +70,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+
+-  (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    Question *q = (Question *)[self objectAtIndexPath:indexPath];
+    self.detailViewController.question = q;
+}
+
+- (void)answerQuestion:(Question *)question sender:(id)sender {
+    question.status = @"answered";
+    [question saveInBackground];
+    
+    int index = -1;
+    // indexForObject doesn't work for some reason;
+    for (int n = 0 ; n < self.objects.count; ++n) {
+        if ([[self.objects[n] objectId] isEqualToString:question.objectId]) {
+            index = n;
+            break;
+        }
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return _objects.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
-    return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    
+    // Update the data store without a new query
+    [self.objects removeObjectAtIndex:index];
+    [self objectsWillLoad];
+    [self.tableView reloadData];
+    
+    // update the detail view
+    if ([self.objects count] == 0) {
+        self.detailViewController.question = nil;
+    } else {
+        if (index >= [self.objects count]) {
+            index = 0;
+        }
+        self.detailViewController.question = self.objects[index];
     }
 }
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        [[segue destinationViewController] setQuestion:[self objectAtIndexPath:indexPath]];
     }
 }
 

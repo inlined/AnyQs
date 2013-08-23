@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  PendingQuestionsViewController.h
 //  AnyQs
 //
 //  Created by Thomas Bouldin on 8/23/13.
@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Question.h"
 
 @class DetailViewController;
 
-@interface PendingQuestionsViewController : UITableViewController
+@interface PendingQuestionsViewController : PFQueryTableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
+- (void)answerQuestion:(Question *)question sender:(id)sender;
 @end

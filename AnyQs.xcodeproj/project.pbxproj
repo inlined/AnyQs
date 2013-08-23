@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1725139717C7F2F100A0DF99 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 1725139617C7F2F100A0DF99 /* Question.m */; };
 		17B8566117C7E47600770163 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566017C7E47600770163 /* Foundation.framework */; };
 		17B8566317C7E47600770163 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566217C7E47600770163 /* CoreGraphics.framework */; };
 		17B8566517C7E47600770163 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566417C7E47600770163 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1725139517C7F2F100A0DF99 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		1725139617C7F2F100A0DF99 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		17B8565D17C7E47600770163 /* AnyQs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyQs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B8566017C7E47600770163 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B8566217C7E47600770163 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				17B8567C17C7E47600770163 /* DetailViewController.m */,
 				17B8567E17C7E47600770163 /* Images.xcassets */,
 				17B8566717C7E47600770163 /* Supporting Files */,
+				1725139517C7F2F100A0DF99 /* Question.h */,
+				1725139617C7F2F100A0DF99 /* Question.m */,
 			);
 			path = AnyQs;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			files = (
 				17B8567117C7E47600770163 /* AppDelegate.m in Sources */,
 				17B8567A17C7E47600770163 /* PendingQuestionsViewController.m in Sources */,
+				1725139717C7F2F100A0DF99 /* Question.m in Sources */,
 				17B8566D17C7E47600770163 /* main.m in Sources */,
 				17B8567D17C7E47600770163 /* DetailViewController.m in Sources */,
 			);
@@ -522,6 +528,7 @@
 				17B8569717C7E47600770163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17B8569817C7E47600770163 /* Build configuration list for PBXNativeTarget "AnyQsTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +537,7 @@
 				17B8569A17C7E47600770163 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

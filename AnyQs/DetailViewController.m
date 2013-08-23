@@ -17,10 +17,10 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setQuestion:(Question *)newQuestion
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_question != newQuestion) {
+        _question = newQuestion;
         
         // Update the view.
         [self configureView];
@@ -31,12 +31,20 @@
     }        
 }
 
+- (IBAction)answerQuestion:(id)sender {
+    [self.delegate answerQuestion:self.question sender:self];
+}
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    if (self.question) {
+        self.promptLabel.text = self.question.prompt;
+        self.answeredButton.hidden = NO;
+    } else {
+        self.promptLabel.text = @"That's all folks!";
+        self.answeredButton.hidden = YES;
     }
 }
 
