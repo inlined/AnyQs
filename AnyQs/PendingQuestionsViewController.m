@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Thomas Bouldin. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "PendingQuestionsViewController.h"
 
 #import "DetailViewController.h"
 
-@interface MasterViewController () {
+
+@interface PendingQuestionsViewController () {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation MasterViewController
+@implementation PendingQuestionsViewController
 
 - (void)awakeFromNib
 {

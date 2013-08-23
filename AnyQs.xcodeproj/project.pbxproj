@@ -15,7 +15,7 @@
 		17B8567117C7E47600770163 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B8567017C7E47600770163 /* AppDelegate.m */; };
 		17B8567417C7E47600770163 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B8567217C7E47600770163 /* Main_iPhone.storyboard */; };
 		17B8567717C7E47600770163 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B8567517C7E47600770163 /* Main_iPad.storyboard */; };
-		17B8567A17C7E47600770163 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B8567917C7E47600770163 /* MasterViewController.m */; };
+		17B8567A17C7E47600770163 /* PendingQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B8567917C7E47600770163 /* PendingQuestionsViewController.m */; };
 		17B8567D17C7E47600770163 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B8567C17C7E47600770163 /* DetailViewController.m */; };
 		17B8567F17C7E47600770163 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B8567E17C7E47600770163 /* Images.xcassets */; };
 		17B8568617C7E47600770163 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8568517C7E47600770163 /* XCTest.framework */; };
@@ -23,6 +23,16 @@
 		17B8568817C7E47600770163 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566417C7E47600770163 /* UIKit.framework */; };
 		17B8569017C7E47600770163 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B8568E17C7E47600770163 /* InfoPlist.strings */; };
 		17B8569217C7E47600770163 /* AnyQsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B8569117C7E47600770163 /* AnyQsTests.m */; };
+		17B8569C17C7E6A500770163 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8569B17C7E6A500770163 /* Parse.framework */; };
+		17B8569E17C7E6D400770163 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8569D17C7E6D400770163 /* AudioToolbox.framework */; };
+		17B856A017C7E6DC00770163 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8569F17C7E6DC00770163 /* CFNetwork.framework */; };
+		17B856A217C7E6ED00770163 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856A117C7E6ED00770163 /* CoreLocation.framework */; };
+		17B856A417C7E6F600770163 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856A317C7E6F600770163 /* libz.1.1.3.dylib */; };
+		17B856A617C7E70000770163 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856A517C7E70000770163 /* MobileCoreServices.framework */; };
+		17B856A817C7E70800770163 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856A717C7E70800770163 /* QuartzCore.framework */; };
+		17B856AA17C7E71000770163 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856A917C7E71000770163 /* Security.framework */; };
+		17B856AC17C7E71600770163 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856AB17C7E71600770163 /* StoreKit.framework */; };
+		17B856AE17C7E72300770163 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B856AD17C7E72300770163 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +58,8 @@
 		17B8567017C7E47600770163 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		17B8567317C7E47600770163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		17B8567617C7E47600770163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		17B8567817C7E47600770163 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		17B8567917C7E47600770163 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		17B8567817C7E47600770163 /* PendingQuestionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PendingQuestionsViewController.h; sourceTree = "<group>"; };
+		17B8567917C7E47600770163 /* PendingQuestionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PendingQuestionsViewController.m; sourceTree = "<group>"; };
 		17B8567B17C7E47600770163 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		17B8567C17C7E47600770163 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		17B8567E17C7E47600770163 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -58,6 +68,16 @@
 		17B8568D17C7E47600770163 /* AnyQsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnyQsTests-Info.plist"; sourceTree = "<group>"; };
 		17B8568F17C7E47600770163 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17B8569117C7E47600770163 /* AnyQsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnyQsTests.m; sourceTree = "<group>"; };
+		17B8569B17C7E6A500770163 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Downloads/Parse.framework; sourceTree = "<group>"; };
+		17B8569D17C7E6D400770163 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		17B8569F17C7E6DC00770163 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		17B856A117C7E6ED00770163 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		17B856A317C7E6F600770163 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		17B856A517C7E70000770163 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		17B856A717C7E70800770163 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17B856A917C7E71000770163 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		17B856AB17C7E71600770163 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		17B856AD17C7E72300770163 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +85,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B856AE17C7E72300770163 /* SystemConfiguration.framework in Frameworks */,
+				17B856AC17C7E71600770163 /* StoreKit.framework in Frameworks */,
+				17B856AA17C7E71000770163 /* Security.framework in Frameworks */,
+				17B856A817C7E70800770163 /* QuartzCore.framework in Frameworks */,
+				17B856A617C7E70000770163 /* MobileCoreServices.framework in Frameworks */,
+				17B856A417C7E6F600770163 /* libz.1.1.3.dylib in Frameworks */,
+				17B856A217C7E6ED00770163 /* CoreLocation.framework in Frameworks */,
 				17B8566317C7E47600770163 /* CoreGraphics.framework in Frameworks */,
+				17B856A017C7E6DC00770163 /* CFNetwork.framework in Frameworks */,
+				17B8569E17C7E6D400770163 /* AudioToolbox.framework in Frameworks */,
 				17B8566517C7E47600770163 /* UIKit.framework in Frameworks */,
+				17B8569C17C7E6A500770163 /* Parse.framework in Frameworks */,
 				17B8566117C7E47600770163 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +136,16 @@
 		17B8565F17C7E47600770163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17B856AD17C7E72300770163 /* SystemConfiguration.framework */,
+				17B856AB17C7E71600770163 /* StoreKit.framework */,
+				17B856A917C7E71000770163 /* Security.framework */,
+				17B856A717C7E70800770163 /* QuartzCore.framework */,
+				17B856A517C7E70000770163 /* MobileCoreServices.framework */,
+				17B856A317C7E6F600770163 /* libz.1.1.3.dylib */,
+				17B856A117C7E6ED00770163 /* CoreLocation.framework */,
+				17B8569F17C7E6DC00770163 /* CFNetwork.framework */,
+				17B8569D17C7E6D400770163 /* AudioToolbox.framework */,
+				17B8569B17C7E6A500770163 /* Parse.framework */,
 				17B8566017C7E47600770163 /* Foundation.framework */,
 				17B8566217C7E47600770163 /* CoreGraphics.framework */,
 				17B8566417C7E47600770163 /* UIKit.framework */,
@@ -121,8 +161,8 @@
 				17B8567017C7E47600770163 /* AppDelegate.m */,
 				17B8567217C7E47600770163 /* Main_iPhone.storyboard */,
 				17B8567517C7E47600770163 /* Main_iPad.storyboard */,
-				17B8567817C7E47600770163 /* MasterViewController.h */,
-				17B8567917C7E47600770163 /* MasterViewController.m */,
+				17B8567817C7E47600770163 /* PendingQuestionsViewController.h */,
+				17B8567917C7E47600770163 /* PendingQuestionsViewController.m */,
 				17B8567B17C7E47600770163 /* DetailViewController.h */,
 				17B8567C17C7E47600770163 /* DetailViewController.m */,
 				17B8567E17C7E47600770163 /* Images.xcassets */,
@@ -259,7 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17B8567117C7E47600770163 /* AppDelegate.m in Sources */,
-				17B8567A17C7E47600770163 /* MasterViewController.m in Sources */,
+				17B8567A17C7E47600770163 /* PendingQuestionsViewController.m in Sources */,
 				17B8566D17C7E47600770163 /* main.m in Sources */,
 				17B8567D17C7E47600770163 /* DetailViewController.m in Sources */,
 			);
@@ -394,6 +434,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../Downloads",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnyQs/AnyQs-Prefix.pch";
 				INFOPLIST_FILE = "AnyQs/AnyQs-Info.plist";
@@ -407,6 +451,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../Downloads",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnyQs/AnyQs-Prefix.pch";
 				INFOPLIST_FILE = "AnyQs/AnyQs-Info.plist";
