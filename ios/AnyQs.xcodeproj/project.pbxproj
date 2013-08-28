@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1725139717C7F2F100A0DF99 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 1725139617C7F2F100A0DF99 /* Question.m */; };
+		1725139917C8188C00A0DF99 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1725139817C8188C00A0DF99 /* FacebookSDK.framework */; };
 		17B8566117C7E47600770163 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566017C7E47600770163 /* Foundation.framework */; };
 		17B8566317C7E47600770163 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566217C7E47600770163 /* CoreGraphics.framework */; };
 		17B8566517C7E47600770163 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B8566417C7E47600770163 /* UIKit.framework */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		1725139517C7F2F100A0DF99 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		1725139617C7F2F100A0DF99 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		1725139817C8188C00A0DF99 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		17B8565D17C7E47600770163 /* AnyQs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyQs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B8566017C7E47600770163 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B8566217C7E47600770163 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,6 +103,7 @@
 				17B8566517C7E47600770163 /* UIKit.framework in Frameworks */,
 				17B8569C17C7E6A500770163 /* Parse.framework in Frameworks */,
 				17B8566117C7E47600770163 /* Foundation.framework in Frameworks */,
+				1725139917C8188C00A0DF99 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +142,7 @@
 		17B8565F17C7E47600770163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1725139817C8188C00A0DF99 /* FacebookSDK.framework */,
 				17B856AD17C7E72300770163 /* SystemConfiguration.framework */,
 				17B856AB17C7E71600770163 /* StoreKit.framework */,
 				17B856A917C7E71000770163 /* Security.framework */,
@@ -443,6 +447,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../Downloads",
+					/Users/tab/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnyQs/AnyQs-Prefix.pch";
@@ -460,6 +465,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../../Downloads",
+					/Users/tab/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnyQs/AnyQs-Prefix.pch";

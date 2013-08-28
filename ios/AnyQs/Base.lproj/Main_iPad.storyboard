@@ -60,7 +60,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Current Question" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="answeredButton" destination="RI1-ql-sIc" id="LRn-hN-Fyo"/>
                         <outlet property="promptLabel" destination="0XM-y9-sOw" id="us1-Gk-6nb"/>
@@ -123,7 +123,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Upcoming" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>

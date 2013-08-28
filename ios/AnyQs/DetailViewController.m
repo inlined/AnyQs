@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController()<PFLogInViewControllerDelegate>
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
@@ -53,6 +53,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    [self ensureLoggedIn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,11 +62,45 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)ensureLoggedIn {
+    
+    PFLogInViewController *login = [[PFLogInViewController alloc] init];
+    if (![PFUser currentUser]) {
+        login.fields = PFLogInFieldsFacebook;
+        login.delegate = self;
+        [self presentModalViewController:login animated:YES];
+    }/* else {
+        [self logInViewController:login didLogInUser:PFUser.currentUser];
+    }*/
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
+    [self ensureLoggedIn];
+}
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+    [self ensureLoggedIn];
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [logInController dismissViewControllerAnimated:YES completion:^{}];
+   /*
+    FBRequest *request = [FBRequest requestForMe];
+    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        NSLog(@"Result: %@", result);
+    }];*/
+    // Yes, this is wasteful
+   /* dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //        NSString *fbid = [PFFacebookUtils userI];
+        NSData *profilePic = [NSData dataWithContentsOfURL:nil];
+    });*/
+}
+
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Upcoming", @"Upcoming");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }

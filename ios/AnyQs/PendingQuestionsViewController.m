@@ -40,6 +40,7 @@
     [super objectsDidLoad:error];
     if (!error && [self.objects count] >= 1 && !self.detailViewController.question) {
         self.detailViewController.question = [self objectAtIndex:0];
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
     }
 }
 
